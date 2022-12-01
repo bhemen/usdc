@@ -35,7 +35,7 @@ and records them to [data/usdc_configs.csv](data/usdc_configs.csv).
 * [Burn](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/FiatTokenV1.sol#L54)
 * [MinterConfigured](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/FiatTokenV1.sol#L55)
 * [MinterRemoved](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/FiatTokenV1.sol#L56)
-* [MasterMinterChanged](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/FiatTokenV1.sol#L57)0
+* [MasterMinterChanged](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/FiatTokenV1.sol#L57)
 * [Blacklisted](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/Blacklistable.sol#L37)
 * [UnBlacklisted](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/Blacklistable.sol#L38)
 * [BlacklisterChanged](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/Blacklistable.sol#L39)
