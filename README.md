@@ -3,7 +3,7 @@
 ## USDC
 
 USDC is a fiat-backed stablecoin issued by Circle.  You can read about the off-chain reserves backing USDC at Circle's [transparency](https://www.circle.com/en/usdc#transparency) page.
-Circle currently issues USDC on [9 blockchains](https://www.circle.com/en/multichain-usdc), but this repository focuses on the contracts that control USDC on Ethereum.
+Circle currently issues USDC on [15 blockchains](https://www.circle.com/en/multichain-usdc), but this repository focuses on the contracts that control USDC on Ethereum.
 On Ethereum, USDC is implemented as an ERC-20 contract, but it has significant additional functionality beyond the minimum specified by the [ERC-20 standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 
 This repository is provided to aid in analysis of the on-chain use of USDC.  If you are considering *using* USDC, please read the [terms of service](https://www.circle.com/en/legal/usdc-terms).
