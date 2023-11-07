@@ -78,6 +78,6 @@ Circle has a brief description of its ["blacklisting" policy available on its we
 Blacklisting is controlled by [0x5db0115f3b72d19cea34dd697cf412ff86dc7e1b](https://etherscan.io/address/0x5db0115f3b72d19cea34dd697cf412ff86dc7e1b), which is an EOA.  
 This is the only account to have ever called the "[blacklist](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/Blacklistable.sol#L76)" function.
 
-To date, [150 accounts have been frozen](https://bloxy.info/txs/events_sc/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?signature_id=257159)
+To date, [195 accounts have been frozen](https://bloxy.info/txs/events_sc/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?signature_id=257159)
 
 
