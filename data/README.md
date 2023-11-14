@@ -3,7 +3,23 @@
 ## USDC ([Link to Box](https://upenn.box.com/s/gft9i4r8q34oc7769o7405w92nskys77))
 
 We've parsed events emitted by [USDC contract](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) using this [Ethereum Log Parser](https://github.com/niuniu-zhang/Ethereum-Log-Parser)
-and uploaded them into [Box](https://upenn.box.com/s/gft9i4r8q34oc7769o7405w92nskys77). Here are the descriptions of schema for each event:
+and uploaded them into [Box](https://upenn.box.com/s/gft9i4r8q34oc7769o7405w92nskys77). In total, we've parsed 14 events:
+1. `Approval`
+2. `AuthorizationUsed`
+3. `Blacklisted`
+4. `BlacklisterChanged`
+5. `AuthorizationCanceled`
+6. `Burn`
+7. `MasterMinterChanged`
+8. `Mint`
+9. `MinterConfigured`
+10. `MinterRemoved`
+11. `OwnershipTransferred`
+12. `PauserChanged`
+13. `Transfer`
+14. `UnBlacklisted`
+
+Here are the descriptions of schema for each event:
 
 ### Approval
 
