@@ -10,7 +10,7 @@ This repository is provided to aid in analysis of the on-chain use of USDC.  If 
 
 ## Contract overview
 
-The USDC contract is deployed at [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48] (https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) on the Ethereum Mainnet.
+The USDC contract is deployed at [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) on the Ethereum Mainnet.
 
 The source code for is available at [Centre's github repository](https://github.com/centrehq/centre-tokens).
 
