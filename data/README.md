@@ -227,3 +227,63 @@ The file `usdc_UnBlacklisted.csv` contains all the "UnBlacklisted" events emitte
 * `blockNumber` - The number of the block where this event was recorded.
 * `_account` - The address of the account that was unblacklisted.
 * `block_timestamp` - The timestamp of the block where this event was recorded.
+
+## Circle CCTP Smart Contracts for EVM-compatible blockchains ([Link to Box](https://upenn.box.com/s/0yrla120kznl23fkfcf3hqi91n0n5ero))
+
+We have parsed events emitted by the following [CCTP smart contracts](https://developers.circle.com/stablecoins/docs/evm-smart-contracts), each with its specific responsibilities:
+
+### [TokenMessenger Contract](https://etherscan.io/address/0xbd3fa81b58ba92a82136038b25adec7066af3155)
+
+**Responsibilities:**
+- Entrypoint for cross-chain USDC transfer.
+- Routes messages to burn USDC on a source chain, and mint USDC on a destination chain.
+
+**Events:**
+
+- `DepositForBurn` - Details events related to deposit for burn operations.
+- `LocalMinterAdded` - Records the addition of local minters.
+- `MintAndWithdraw` - Logs events of minting and withdrawal actions.
+- `OwnershipTransferred` - Tracks ownership transfer events.
+- `OwnershipTransferStarted` - Indicates the initiation of an ownership transfer.
+- `RemoteTokenMessengerAdded` - Logs the addition of remote token messengers.
+- `RemoteTokenMessengerRemoved` - Tracks the removal of remote token messengers.
+- `RescuerChanged` - Records changes in the rescuer role.
+
+
+### [MessageTransmitter Contract](https://etherscan.io/address/0x0a992d191deec32afe36203ad87d7d289a738f81)
+
+**Responsibilities:**
+- Generic message passing.
+- Sends all messages on the source chain, and receives all messages on the destination chain.
+
+**Events:**
+
+- `AttesterEnabled` - Indicates enabling of an attester.
+- `AttesterManagerUpdated` - Logs updates to the attester manager.
+- `MessageReceived` - Tracks the reception of messages.
+- `MessageSent` - Logs the sending of messages.
+- `OwnershipTransferred` - Tracks ownership transfer events.
+- `OwnershipTransferStarted` - Indicates the initiation of an ownership transfer.
+- `PauserChanged` - Logs changes in the pauser role.
+- `RescuerChanged` - Records changes in the rescuer role.
+- `SignatureThresholdUpdated` - Updates the signature threshold.
+
+### [TokenMinter Contract](https://etherscan.io/address/0xc4922d64a24675e16e1586e3e3aa56c06fabe907)
+
+**Responsibilities:**
+- Responsible for minting and burning USDC.
+- Contains chain-specific settings used by burners and minters.
+
+**Events:**
+
+- `LocalTokenMessengerAdded` - Indicates the addition of a local token messenger.
+- `OwnershipTransferred` - Tracks ownership transfer events.
+- `OwnershipTransferStarted` - Indicates the initiation of an ownership transfer.
+- `PauserChanged` - Logs changes in the pauser role.
+- `SetBurnLimitPerMessage` - Sets the burn limit per message.
+- `SetTokenController` - Specifies the setting of a token controller.
+- `TokenPairLinked` - Records the linking of token pairs.
+- `RescuerChanged` - Records changes in the rescuer role.
+
+
+
