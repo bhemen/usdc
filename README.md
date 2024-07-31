@@ -89,12 +89,18 @@ The USDC contract on Ethereum is a proxy contract, meaning that Circle can chang
 * [Press release](https://www.coinbase.com/blog/usdc-v2-upgrading-a-multi-billion-dollar-erc-20-token)
 * [V2 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2.sol)
 
+The V2 upgrade added the [increaseAllowance](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2.sol#L54) and [decreaseAllowance](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2.sol#L72) functions.  These functions were introduced to avoid potential attacks where a malicious spender attempted to front-run a user's attempted allowence change (See e.g. [Resolving the Multiple Withdrawal Attack on ERC20 Tokens](https://ieeexplore.ieee.org/document/8802438)).  These functions are not actually part of the ERC-20 standard, and they were actually [*removed* from OpenZeppelin's reference ERC-20 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/4585) before Circle added them to USDC.
+
 ### V2.1 Upgrade 
 
 * [V2.1 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_1.sol)
+
+This upgrade was very simple -- it moved all USDC held by the USDC contract itself to a "lost and found" address, then [blacklisted the USDC contract itself](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_1.sol#L42) -- preventing users from transferring USDC to the USDC contract.  Confused users frequently transfer their tokens to the token contract itself.  For example, the [USDT contract holds hundreds of thousands of USDC and USDT](https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7).  I assume users transferred USDC to the USDT contract in hopes that this would somehow convert the tokens.  Circle cannot block the USDC contract from holding USDT, however, and so the [USDC contract still holds tens of thousands of dollars worth of USDT](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48), that is effectively frozen in the contract (until Circle makes a future upgrade).
 
 ### V2.2 Upgrade (January 2024)
 
 * [Press release](https://www.circle.com/blog/announcing-usdc-v2.2)
 * [V2.2 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_2.sol)
+
+
 
