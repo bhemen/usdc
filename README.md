@@ -78,6 +78,23 @@ Circle has a brief description of its ["blacklisting" policy available on its we
 Blacklisting is controlled by [0x5db0115f3b72d19cea34dd697cf412ff86dc7e1b](https://etherscan.io/address/0x5db0115f3b72d19cea34dd697cf412ff86dc7e1b), which is an EOA.  
 This is the only account to have ever called the "[blacklist](https://github.com/centrehq/centre-tokens/blob/master/contracts/v1/Blacklistable.sol#L76)" function.
 
-To date, [195 accounts have been frozen](https://bloxy.info/txs/events_sc/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?signature_id=257159)
+To date, [239 accounts have been frozen](https://bloxy.info/txs/events_sc/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48?signature_id=257159)
 
+## Upgrades
+
+The USDC contract on Ethereum is a proxy contract, meaning that Circle can change the code at any time they wish.  In fact, Circle has changed the contract several times
+
+### V2 Upgrade (December 2020)
+
+* [Press release](https://www.coinbase.com/blog/usdc-v2-upgrading-a-multi-billion-dollar-erc-20-token)
+* [V2 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2.sol)
+
+### V2.1 Upgrade 
+
+* [V2.1 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_1.sol)
+
+### V2.2 Upgrade (January 2024)
+
+* [Press release](https://www.circle.com/blog/announcing-usdc-v2.2)
+* [V2.2 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_2.sol)
 
