@@ -109,8 +109,7 @@ This upgrade was very simple -- it moved all USDC held by the USDC contract itse
 This upgrade changed the way they implement "blacklisting" of addresses in an attempt to save on gas fees.
 In previous versions of the USDC contract, Circle implemented a "blacklist" in the obvious way -- they had a [solidity mapping from address to bool that determined whether you were blacklisted](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v1/Blacklistable.sol#L29).
 
-In V2.2 they eliminated this mapping, and stored your "blacklist" state [in the top bit of your 256-bit account balance]
-(https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_2.sol#L236).
+In V2.2 they eliminated this mapping, and stored your "blacklist" state [in the top bit of your 256-bit account balance](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_2.sol#L236).
 When you try to transfer UDSC to or from an account, the USDC contract needs to lookup the balance of that account anyway, so by storing the "blacklisted" bit in the account balance, they save an additional integer lookup.
 
 
