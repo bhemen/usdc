@@ -91,6 +91,10 @@ The USDC contract on Ethereum is a proxy contract, meaning that Circle can chang
 
 The V2 upgrade added the [increaseAllowance](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2.sol#L54) and [decreaseAllowance](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2.sol#L72) functions.  These functions were introduced to avoid potential attacks where a malicious spender attempted to front-run a user's attempted allowence change (See e.g. [Resolving the Multiple Withdrawal Attack on ERC20 Tokens](https://ieeexplore.ieee.org/document/8802438)).  These functions are not actually part of the ERC-20 standard, and they were actually [*removed* from OpenZeppelin's reference ERC-20 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/4585) before Circle added them to USDC.
 
+This upgrade also implemented 
+* the "permit" functionality of [EIP-2612](https://eips.ethereum.org/EIPS/eip-2612)
+* the "transferwithAuthorization" of [EIP-3009](https://eips.ethereum.org/EIPS/eip-3009)
+
 ### V2.1 Upgrade 
 
 * [V2.1 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_1.sol)
@@ -101,6 +105,13 @@ This upgrade was very simple -- it moved all USDC held by the USDC contract itse
 
 * [Press release](https://www.circle.com/blog/announcing-usdc-v2.2)
 * [V2.2 contract](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_2.sol)
+
+This upgrade changed the way they implement "blacklisting" of addresses in an attempt to save on gas fees.
+In previous versions of the USDC contract, Circle implemented a "blacklist" in the obvious way -- they had a [solidity mapping from address to bool that determined whether you were blacklisted](https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v1/Blacklistable.sol#L29).
+
+In V2.2 they eliminated this mapping, and stored your "blacklist" state [in the top bit of your 256-bit account balance]
+(https://github.com/circlefin/stablecoin-evm/blob/master/contracts/v2/FiatTokenV2_2.sol#L236).
+When you try to transfer UDSC to or from an account, the USDC contract needs to lookup the balance of that account anyway, so by storing the "blacklisted" bit in the account balance, they save an additional integer lookup.
 
 
 
