@@ -46,7 +46,7 @@ The file [analysis/usdc_analysis.py](analysis/usdc_analysis.py) does some basic 
 
 USDC is a proxy contract, meaning that the contract functionality can be changed at any time by the "owner"
 
-USDC is also pausable, meaning that it can be paused at any time by the "owner" [0xFcb19e6a322b27c06842A71e8c725399f049AE3a](https://etherscan.io/address/0xFcb19e6a322b27c06842A71e8c725399f049AE3a).  When the contract is paused, no USDC can be minted, burned, frozen or transferred until the owner unpauses the contract.
+USDC is also pausable, meaning that it can be paused at any time by the "owner" [0xFcb19e6a322b27c06842A71e8c725399f049AE3a](https://etherscan.io/address/0xFcb19e6a322b27c06842A71e8c725399f049AE3a).  When the contract is paused, no USDC can be minted, burned, frozen or transferred until the owner unpauses the contract.  The "owner" is an Externally Owned Account (EOA), i.e., it is not a smart-contract wallet.
 
 ### Minting
 
